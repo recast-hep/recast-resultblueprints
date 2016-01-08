@@ -1,3 +1,3 @@
-# recast-dmhiggs-demo
+# recast-resultblueprints
 
 collection of result blueprints for RECAST control center
