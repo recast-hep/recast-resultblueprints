@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+        
+{% block prebody %}
+{% endblock %}
+
+{% block container%}
+<div class="page-header">
+    <h1>Results for request <small>{{requestId}}</small></h1>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><a href="/limits/{{requestId}}">Limit Results</a></h3>
+      </div>
+      <div class="panel-body" id="limit-panel">
+          <dl class="dl-horizontal">
+	    <dt>Observed</dt>
+	    <dd id="observed">{{results['observed']}}</dd>
+	    <dt>Spin-0 Expected</dt>
+	    <dd id="spin0_expected">{{results['expected-spin0']}}</dd>
+	    <dt>Spin-2 Expected</dt>
+	    <dd id="spin2_expected">{{results['expected-spin2']}}</dd>
+	  </dl>
+      </div>
+
+</div>
+{% endblock %}
