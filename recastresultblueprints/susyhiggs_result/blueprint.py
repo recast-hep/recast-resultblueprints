@@ -9,4 +9,4 @@ import glob
 
 @blueprint.route('/result/<requestId>/<parameter_pt>')
 def result_view(requestId,parameter_pt):
-  return render_template('result.html',analysisId = RECAST_ANALYSIS_ID,requestId=requestId,parameter_pt=parameter_pt)
+  return render_template('susyhiggs_result.html',analysisId = RECAST_ANALYSIS_ID,requestId=requestId,parameter_pt=parameter_pt)

@@ -12,4 +12,4 @@ from recastbackend.resultaccess import resultfilepath
 def result_view(requestId,parameter_pt):
   resultdir  = resultfilepath(requestId,parameter_pt,'dedicated','')
   feynmandiags = [x.rstrip('.pdf').replace(resultdir+'/','') for x in glob.glob('{}/feynmandiags/*.pdf'.format(resultdir))]
-  return render_template('result.html',analysisId = RECAST_ANALYSIS_ID,requestId=requestId,parameter_pt=parameter_pt, feynmandiags = feynmandiags)
+  return render_template('fullchain_result.html',analysisId = RECAST_ANALYSIS_ID,requestId=requestId,parameter_pt=parameter_pt, feynmandiags = feynmandiags)
