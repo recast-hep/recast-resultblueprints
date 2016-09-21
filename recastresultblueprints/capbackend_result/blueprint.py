@@ -20,4 +20,4 @@ def result_view(analysisid,wflowconfigname,basicreqid):
 def json_result(analysisid,wflowconfigname,basicreqid):
     fullpath = recastbackend.resultaccess.basicreq_wflowconfigpath(basicreqid,wflowconfigname)
     resultdata = recastbackend.resultextraction.extract_result(fullpath,analysisid,wflowconfigname)
-    return
+    return jsonify(resultdata)
