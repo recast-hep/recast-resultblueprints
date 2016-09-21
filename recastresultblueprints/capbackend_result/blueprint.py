@@ -15,3 +15,9 @@ def result_view(analysisid,wflowconfigname,basicreqid):
         for fl in files:
             resultsfiles.append('/'.join([dirpath.replace(fullpath,''),fl]).lstrip('/'))
     return render_template('cap_result.html', basicreqid = basicreqid, wflowconfigname = wflowconfigname, resultsfiles = resultsfiles, resultdata = resultdata)
+
+@blueprint.route('/result/<analysisid>/<wflowconfigname>/<basicreqid>/json')
+def json_result(analysisid,wflowconfigname,basicreqid):
+    fullpath = recastbackend.resultaccess.basicreq_wflowconfigpath(basicreqid,wflowconfigname)
+    resultdata = recastbackend.resultextraction.extract_result(fullpath,analysisid,wflowconfigname)
+    return
