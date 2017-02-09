@@ -4,7 +4,7 @@ import glob
 import recastbackend.resultaccess
 
 from flask import Blueprint, render_template, jsonify, request
-blueprint = Blueprint('capbackend_result', __name__, template_folder='templates')
+blueprint = Blueprint('yadage_result', __name__, template_folder='templates')
 
 @blueprint.route('/result/<analysisid>/<wflowconfigname>/<basicreqid>')
 def result_view(analysisid,wflowconfigname,basicreqid):
@@ -14,7 +14,7 @@ def result_view(analysisid,wflowconfigname,basicreqid):
     for dirpath,subdirs,files in os.walk(fullpath):
         for fl in files:
             resultsfiles.append('/'.join([dirpath.replace(fullpath,''),fl]).lstrip('/'))
-    return render_template('cap_result.html', basicreqid = basicreqid, wflowconfigname = wflowconfigname, resultsfiles = resultsfiles, resultdata = resultdata)
+    return render_template('recast_result.html', basicreqid = basicreqid, wflowconfigname = wflowconfigname, resultsfiles = resultsfiles, resultdata = resultdata)
 
 @blueprint.route('/result/<analysisid>/<wflowconfigname>/<basicreqid>/json')
 def json_result(analysisid,wflowconfigname,basicreqid):
