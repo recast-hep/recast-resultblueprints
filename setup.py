@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
   name = 'recast-resultblueprints',
-  version = '0.0.1',
+  version = '0.1.0',
   description = 'recast-resultblueprints',
   url = 'http://github.com/recast-hep/recast-resultblueprints',
   author = 'Lukas Heinrich',
